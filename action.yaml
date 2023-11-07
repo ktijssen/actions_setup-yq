@@ -14,13 +14,13 @@ runs:
       shell: bash
       run: |
 
-        mkdir -p /home/runner/.local/bin/
+        mkdir -p $HOME/.local/bin/
         if [[ ${{ inputs.version }} != "latest" ]]; then
-          wget https://github.com/mikefarah/yq/releases/download/${{ inputs.version }}/yq_linux_amd64 -O /home/runner/.local/bin/yq
-          chmod +x /home/runner/.local/bin/yq
+          wget -q https://github.com/mikefarah/yq/releases/download/${{ inputs.version }}/yq_linux_amd64 -O $HOME/.local/bin/yq
+          chmod +x $HOME/.local/bin/yq
         else
-          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /home/runner/.local/bin/yq
-          chmod +x /home/runner/.local/bin/yq
+          wget -q https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O $HOME/.local/bin/yq
+          chmod +x $HOME/.local/bin/yq
         fi
     - name: Show installed version
       shell: bash
