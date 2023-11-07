@@ -13,6 +13,7 @@ runs:
     - name: Download YQ from GitHub
       shell: bash
       run: |
+        echo $PATH
         if [[ ${{ inputs.version }} != "latest" ]]; then
           wget https://github.com/mikefarah/yq/releases/download/${{ inputs.version }}/yq_linux_amd64 -O /usr/local/bin/yq
           chmod +x /usr/local/bin/yq
