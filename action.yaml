@@ -15,11 +15,11 @@ runs:
       run: |
         echo $PATH
         if [[ ${{ inputs.version }} != "latest" ]]; then
-          wget https://github.com/mikefarah/yq/releases/download/${{ inputs.version }}/yq_linux_amd64 -O /usr/local/bin/yq
-          chmod +x /usr/local/bin/yq
+          wget https://github.com/mikefarah/yq/releases/download/${{ inputs.version }}/yq_linux_amd64 -O /home/runner/.local/bin/yq
+          chmod +x /home/runner/.local/bin/yq
         else
-          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
-          chmod +x /usr/local/bin/yq
+          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /home/runner/.local/bin/yq
+          chmod +x /home/runner/.local/bin/yq
         fi
     - name: Show installed version
       shell: bash
