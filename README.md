@@ -1,1 +1,1 @@
-# actions_setup-yq
+# GitHub Action to Setup YQ
